@@ -1,0 +1,16 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "mocha"
+  ],
+  "rules": {
+    "mocha/no-exclusive-tests": "error",
+    "valid-jsdoc": "error"
+  },
+  "env": {
+    "browser": false,
+    "node": true,
+    "mocha": true,
+  },
+  "extends": "airbnb"
+}

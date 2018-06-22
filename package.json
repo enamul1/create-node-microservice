@@ -1,0 +1,39 @@
+{
+  "name": "create-node-microservice",
+  "version": "0.1.0",
+  "description": "Create Node.js microservices with no build configuration.",
+  "main": "index.js",
+  "scripts": {
+    "create-node-microservice": "node tasks/create-mode-microservice.js",
+    "test": "cd packages/node-scripts && node bin/node-scripts.js test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fieldnation/create-node-microservice.git"
+  },
+  "keywords": [
+    "node",
+    "microservice"
+  ],
+  "author": "Field Nation",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fieldnation/create-node-microservice/issues"
+  },
+  "homepage": "https://github.com/fieldnation/create-node-microservice",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "husky": "^0.14.3",
+    "jest": "^23.1.0"
+  },
+  "peerDependencies": {
+    "debug": "^3.1.0",
+    "dotenv": "^6.0.0",
+    "restify": "^7.2.1",
+    "restify-errors": "^6.1.1"
+  }
+}
