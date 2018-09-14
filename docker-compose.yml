@@ -1,0 +1,17 @@
+version: '2'
+networks:
+  fieldnation:
+    external: true
+services:
+  web:
+    build: .
+    command: npm run dev
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - 8888:8080
+    external_links:
+      - fieldnation_rabbitmq_1:rabbit
+      - fieldnation_db_1:db
+      - fieldnation_redis_1:redis

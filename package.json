@@ -4,8 +4,17 @@
   "description": "Create Node.js microservices with no build configuration.",
   "main": "index.js",
   "scripts": {
-    "create-node-microservice": "node tasks/create-mode-microservice.js",
-    "test": "cd packages/node-scripts && node bin/node-scripts.js test"
+    "start": "docker-compose up",
+    "dev": "DEBUG=* node src/handler/server.js",
+    "test": "jest",
+    "lint": "eslint src",
+    "lint:autofix": "eslint src scripts --fix",
+    "knex": "babel-node ./node_modules/knex/bin/cli.js",
+    "documentor": "npx documentation build src/*.js --github --format md --config documentation.yml > api.md",
+    "prepush": "npm run lint - --kill-others-on-fail; npm run test:dev"
+  },
+  "engines": {
+    "node": "8.12.0"
   },
   "repository": {
     "type": "git",
@@ -16,23 +25,31 @@
     "microservice"
   ],
   "author": "Field Nation",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/fieldnation/create-node-microservice/issues"
   },
   "homepage": "https://github.com/fieldnation/create-node-microservice",
   "devDependencies": {
+    "env-test": "^1.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "husky": "^0.14.3",
-    "jest": "^23.1.0"
+    "jest": "^23.1.0",
+    "sqlite3": "^4.0.0"
   },
-  "peerDependencies": {
+  "dependencies": {
+    "amqplib": "^0.5.2",
     "debug": "^3.1.0",
     "dotenv": "^6.0.0",
+    "knex": "^0.14.6",
+    "mysql2": "^1.5.3",
+    "redis": "^2.8.0",
+    "redis-mock": "^0.23.0",
+    "amqplib-mocks": "^1.3.0",
     "restify": "^7.2.1",
     "restify-errors": "^6.1.1"
   }
