@@ -2,7 +2,7 @@ const restify = require('restify');
 const errors = require('restify-errors');
 const handlers = require('./index');
 const contextMiddleware = require('./contextMiddleware');
-const rabbitWorker = require('../rabbitWorker');
+//const rabbitWorker = require('../rabbitWorker');
 const log = require('../log');
 
 // [Restify - creating a server](http://restify.com/docs/home/)
